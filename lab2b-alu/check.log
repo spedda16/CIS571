@@ -1,0 +1,110 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+3855 (git sha1 54294957, clang 7.0.1 -fPIC -Os)
+
+
+-- Parsing `lc4_alu.v' using frontend `verilog' --
+
+1. Executing Verilog-2005 frontend: lc4_alu.v
+Parsing Verilog input from `lc4_alu.v' to AST representation.
+Generating RTLIL representation for module `\lc4_alu'.
+Successfully finished Verilog frontend.
+
+-- Parsing `lc4_divider.v' using frontend `verilog' --
+
+2. Executing Verilog-2005 frontend: lc4_divider.v
+Parsing Verilog input from `lc4_divider.v' to AST representation.
+Generating RTLIL representation for module `\lc4_divider'.
+Generating RTLIL representation for module `\lc4_divider_one_iter'.
+Successfully finished Verilog frontend.
+
+-- Parsing `lc4_cla.v' using frontend `verilog' --
+
+3. Executing Verilog-2005 frontend: lc4_cla.v
+Parsing Verilog input from `lc4_cla.v' to AST representation.
+Generating RTLIL representation for module `\gp1'.
+Generating RTLIL representation for module `\gp4'.
+Generating RTLIL representation for module `\cla16'.
+Generating RTLIL representation for module `\gpn'.
+Successfully finished Verilog frontend.
+
+-- Running command `check; hierarchy -check; flatten; check -assert' --
+
+4. Executing CHECK pass (checking for obvious problems).
+Checking module cla16...
+Warning: Wire cla16.\cout4 [2] is used but has no driver.
+Warning: Wire cla16.\cout4 [1] is used but has no driver.
+Warning: Wire cla16.\cout4 [0] is used but has no driver.
+Warning: Wire cla16.\cout5 [2] is used but has no driver.
+Warning: Wire cla16.\cout3 [2] is used but has no driver.
+Warning: Wire cla16.\cout3 [1] is used but has no driver.
+Warning: Wire cla16.\cout3 [0] is used but has no driver.
+Warning: Wire cla16.\cout5 [1] is used but has no driver.
+Warning: Wire cla16.\cout2 [2] is used but has no driver.
+Warning: Wire cla16.\cout2 [1] is used but has no driver.
+Warning: Wire cla16.\cout2 [0] is used but has no driver.
+Warning: Wire cla16.\cout5 [0] is used but has no driver.
+Warning: Wire cla16.\cout1 [2] is used but has no driver.
+Warning: Wire cla16.\cout1 [1] is used but has no driver.
+Warning: Wire cla16.\cout1 [0] is used but has no driver.
+Checking module gp4...
+Checking module gp1...
+Checking module lc4_alu...
+Found and reported 15 problems.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+Mapping positional arguments of cell cla16.gp4_5 (gp4).
+Mapping positional arguments of cell cla16.gp4_4 (gp4).
+Mapping positional arguments of cell cla16.gp4_3 (gp4).
+Mapping positional arguments of cell cla16.gp4_2 (gp4).
+Mapping positional arguments of cell cla16.gp4_1 (gp4).
+Mapping positional arguments of cell cla16.gp1_16 (gp1).
+Mapping positional arguments of cell cla16.gp1_15 (gp1).
+Mapping positional arguments of cell cla16.gp1_14 (gp1).
+Mapping positional arguments of cell cla16.gp1_13 (gp1).
+Mapping positional arguments of cell cla16.gp1_12 (gp1).
+Mapping positional arguments of cell cla16.gp1_11 (gp1).
+Mapping positional arguments of cell cla16.gp1_10 (gp1).
+Mapping positional arguments of cell cla16.gp1_9 (gp1).
+Mapping positional arguments of cell cla16.gp1_8 (gp1).
+Mapping positional arguments of cell cla16.gp1_7 (gp1).
+Mapping positional arguments of cell cla16.gp1_6 (gp1).
+Mapping positional arguments of cell cla16.gp1_5 (gp1).
+Mapping positional arguments of cell cla16.gp1_4 (gp1).
+Mapping positional arguments of cell cla16.gp1_3 (gp1).
+Mapping positional arguments of cell cla16.gp1_2 (gp1).
+Mapping positional arguments of cell cla16.gp1_1 (gp1).
+
+6. Executing FLATTEN pass (flatten design).
+<suppressed ~22 debug messages>
+
+7. Executing CHECK pass (checking for obvious problems).
+Checking module cla16...
+Checking module gp4...
+Checking module gp1...
+Checking module lc4_alu...
+Found and reported 0 problems.
+
+Warnings: 15 unique messages, 15 total
+End of script. Logfile hash: 2fa62255a4, CPU: user 0.08s system 0.03s, MEM: 14.80 MB peak
+Yosys 0.9+3855 (git sha1 54294957, clang 7.0.1 -fPIC -Os)
+Time spent: 50% 3x read_verilog (0 sec), 41% 2x check (0 sec), ...
